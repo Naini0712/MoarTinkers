@@ -37,7 +37,7 @@ public class TraitPsiEater extends AbstractTrait {
 		if (player instanceof EntityPlayer) {
 			EntityPlayer actualPlayer = (EntityPlayer) player;
 			int maxPsi = (int) Math.pow(ToolHelper.getActualDamage(tool, actualPlayer) * .2f, 2.5f);
-			int psi = CompatHelper.extractMana(tool, actualPlayer, maxPsi);
+			int psi = CompatHelper.extractPsi(actualPlayer, maxPsi);
 			return newDamage * (1f + (float) psi / (float) maxPsi * 1.4f);
 		}
 
